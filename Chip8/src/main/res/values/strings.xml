@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AndroidChip8</string>
+
+    <string name="action_assembly">Assembly</string>
+    <string name="action_cycles_per_second">Set Cycles per Second</string>
+    <string name="action_load">Load</string>
+    <string name="action_save">Save</string>
+    <string name="action_save_as">Save As</string>
+    <string name="action_run">Run</string>
+    <string name="action_new">New</string>
+    <string name="title_activity_assembly">AssemblyActivity</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_load_builtins">Load Builtin</string>
+</resources>

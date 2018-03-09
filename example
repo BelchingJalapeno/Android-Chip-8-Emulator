@@ -1,0 +1,35 @@
+JMP .start
+
+.sprite
+    0b00011000
+    0b00100100
+    0b01000010
+    0b01000010
+    0b00100100
+    0b00011000
+
+.start
+    MOV V1 0 ;sprite x
+    MOV V2 0 ;sprite y
+    MOV I .sprite
+
+.resetLoop
+    MOV V4 0
+
+.loop
+    NEQ V4 20
+    CLS
+
+    RND V3 0x07
+    ADD V3 1
+    ADD V1 V3
+    RND V3 7
+    ADD v3 1
+    ADD V2 V3
+
+    DRW V1 V2 6
+
+    NEQ V4 20
+    JMP .resetLoop
+    ADD V4 1
+    JMP .loop

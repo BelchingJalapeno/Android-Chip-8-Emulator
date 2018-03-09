@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_assembly"
+        android:icon="@drawable/ic_code_white_48dp"
+        android:orderInCategory="100"
+        android:title="@string/action_assembly"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_cycles_per_second"
+        android:icon="@android:drawable/ic_menu_save"
+        android:orderInCategory="100"
+        android:title="@string/action_cycles_per_second"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/load_builtins"
+        android:orderInCategory="100"
+        android:title="@string/action_load_builtins"
+        app:showAsAction="never" />
+</menu>
