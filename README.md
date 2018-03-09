@@ -1,8 +1,8 @@
-#Android Chip-8 emulator
+# Android Chip-8 emulator
 A Chip-8 emulator for Android with a built in psudo-assembly language and editor for creating your own
 chip-8 programs. [Click for more info on the Chip-8 system.](https://en.wikipedia.org/wiki/CHIP-8)
 
-#Installing
+# Installing
 Requires at least JDK 6, Android sdk 21, and Android sdk build tools 26.0.2 installed to build, with an Android device connected with developer options
 turned on.  After those are installed and your device setup, navigate to the root directory and run `gradlew installDebug` to build and install.
 # Registers
