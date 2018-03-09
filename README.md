@@ -33,15 +33,15 @@ purpose registers. `DT` **can** be read from but **not** `ST`. Use `MOV DT VX` t
 
 `DRW x y height` - draw a sprite to screen at x, y using the reading height bytes from the location of the `I` register
 
-`CLS` - clears the screen, setting turning all pixels off
+`CLS` - clears the screen, turning all pixels off
 
 `CAL` - calls a subroutine
 
 `RET` - returns from a subroutine
 
-`EQ dst src` - skips the next instruction if the 2 values are equal
+`EQ dst src` - skips the next instruction if the dst register and src or src register are equal
 
-`NEQ dst src` - skips the next instruction if the 2 values are not equal
+`NEQ dst src` - skips the next instruction if the dst register and src or src register are not equal
 
 `AND dst src` - sets dst to dst AND src 
 
@@ -49,11 +49,11 @@ purpose registers. `DT` **can** be read from but **not** `ST`. Use `MOV DT VX` t
 
 `XOR dst src` - sets dst to dst XOR src 
 
-`SHL dst src` - shift the bits left, VF is set to the most signifigant bit of VX before the shift
+`SHL dst src` - shift the bits left, VF is set to the most significant bit of VX before the shift
 
-`SHR dst src` - shift the bits right, VF is set to the least signifigant bit of VX before the shift
+`SHR dst src` - shift the bits right, VF is set to the least significant bit of VX before the shift
 
-`RND dst src` sets register to a random number & a value
+`RND dst value` sets dst to a random number & a value
 
 `KP reg` - skips the next instruction if the key stored in register is pressed
 
@@ -61,11 +61,11 @@ purpose registers. `DT` **can** be read from but **not** `ST`. Use `MOV DT VX` t
 
 `KW reg` - waits for a key to be pressed, then storing the key in the register
 
-`BCD dst src` - stores the value of the register at addresses I, I+1, and I+2 as the hundreds, tens, and ones
+`BCD reg` - stores the value of the register at addresses I, I+1, and I+2 as the hundreds, tens, and ones
 
-`STR dst src` - stores registers V0 - VX in memory starting at address I
+`STR VX` - stores registers V0 - VX in memory starting at address I
 
-`LOD dst src` - fills registers V0 - VX with the values from memory starting at address I
+`LOD VX` - fills registers V0 - VX with the values from memory starting at address I
 
 `SUB dst src` - subtracts dst from src registers and sets the value to dst and sets carry flag(VF)
 
