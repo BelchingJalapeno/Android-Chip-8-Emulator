@@ -9,32 +9,32 @@ import java.util.Deque;
 public class Input {
 
     private final boolean[] keys = new boolean[16];
-    private final Deque<Input.KeyEvent> que = new ArrayDeque<>();
+    private final Deque<Input.KeyEvent> queue = new ArrayDeque<>();
 
     /**
-     * Empties the {@link KeyEvent} que and sets the key states.
+     * Empties the {@link KeyEvent} queue and sets the key states.
      */
     public void process() {
         KeyEvent event;
-        while ((event = que.poll()) != null) {
+        while ((event = queue.poll()) != null) {
             try {
                 set(event.key, event.state);
             } catch (IndexOutOfBoundsException ignored) {
                 //catch all KeyEvents that are out of bounds, and do nothing with them, but keep processing the
-                //rest of the KeyEvents in the que
+                //rest of the KeyEvents in the queue
             }
         }
     }
 
     /**
-     * Waits for a key to be pressed down and returns it. If the {@link KeyEvent} que isn't empty,
+     * Waits for a key to be pressed down and returns it. If the {@link KeyEvent} queue isn't empty,
      * it checks there first.
      *
      * @return the key that was pressed
      */
     public synchronized short waitForKey() {
         KeyEvent event;
-        while ((event = que.poll()) == null || !event.state) {
+        while ((event = queue.poll()) == null || !event.state) {
             if (event != null) {
                 set(event.key, event.state);
             } else {
@@ -65,12 +65,12 @@ public class Input {
     }
 
     /**
-     * Adds a {@link KeyEvent} to the que to be {@link #process()}
+     * Adds a {@link KeyEvent} to the queue to be {@link #process()}
      *
      * @param event
      */
     public synchronized void fireEvent(KeyEvent event) {
-        this.que.add(event);
+        this.queue.add(event);
         this.notifyAll();
     }
 
